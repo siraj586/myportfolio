@@ -324,3 +324,18 @@ section {
       0 0 30px rgba(138, 43, 226, 0.3);
   }
 }
+/* ── GSAP helpers ─────────────────────────────────────────── */
+
+/* Hide the hero subtitle + button until GSAP fades them in.
+   Only when JS is running (.js is set in <head>) and the user is fine
+   with motion — otherwise they are simply visible from the start. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero-reveal {
+    visibility: hidden;
+  }
+}
+
+/* The skill bars grow with transform: scaleX(), starting from the left edge */
+.progress-bar {
+  transform-origin: left center;
+}

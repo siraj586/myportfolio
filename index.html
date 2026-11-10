@@ -15,6 +15,11 @@
     />
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link rel="stylesheet" href="profiel.css" />
+    <!-- Marks the page as "JS is running" before first paint, so CSS can
+         pre-hide the hero elements that GSAP fades in (no flash). -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
 
   <body>
@@ -56,8 +61,8 @@
             <h1 class="glowing-text">
               <span id="typewriter-text"></span><span class="cursor">|</span>
             </h1>
-            <h2>Frontend Web Developer</h2>
-            <a href="#contact" class="btn btn-primary mt-4">Get In Touch</a>
+            <h2 class="hero-reveal">Frontend Web Developer</h2>
+            <a href="#contact" class="btn btn-primary mt-4 hero-reveal">Get In Touch</a>
           </div>
         </div>
       </div>
@@ -471,6 +476,16 @@
       </div>
     </section>
 
+    <!-- GSAP core + ScrollTrigger plugin. "defer" scripts run in order,
+         so both are ready before profiel.js uses them. -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
     <script src="profiel.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
